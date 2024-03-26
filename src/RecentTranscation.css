@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.main-grid{
+    width: 450px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.grid{
+    display: flex;
+    justify-content: space-between;
+}
+
+.refresh-img{
+    width: 30px;
+    height: 25px;
+    transform: translate(0, 30%);
+}
+
+.threedots{
+    width: 20px;
+    height: 20px;
+    transform: translate(0, 30%);
+
+}
+.table-header{
+    color: grey;
+}
+td{
+    padding: 5px;
+    
+}
+.status-img{
+    width: 5px;
+    height: 5px;
+}

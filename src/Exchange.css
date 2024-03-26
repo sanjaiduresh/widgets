@@ -1,0 +1,74 @@
+.frame{
+    color:black;
+    background-color: white;
+    height:460px;
+    width: 275px;
+    border-radius: 10px; 
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    
+   }
+   .text{
+       color:black;
+       margin-left: 30px;
+   }
+   #img{
+     margin-right:10px;
+     margin-top:10px;
+   }
+   .buttons{
+    border-radius: 15px;
+    padding: 2px;
+    margin: 0px 10px;
+    background-color: #F8F9FA;
+    display: flex;
+    justify-content: space-around;
+   }
+   .buy-button,
+   .sell-button {
+     padding: 10px ;
+     color: #313131;
+     border: none;
+     border-radius: 5px;
+   }
+   
+   #type-select{
+       width:400px;
+       margin-left: 30px;
+   }
+   .from{
+       margin-left:30px;
+   }
+   #type-select {
+       border-radius:5px;
+       border: none; 
+       color: black; 
+       font-size: 16px;
+       padding: 8px 12px; 
+       width: 200px; 
+     background-color: rgb(246, 246, 235);
+     }
+     .cost-input{
+       margin-left: 30px;
+       margin-top: 5px;
+       height:30px;
+       width:200px;
+       border:none;
+       border-radius:5px;
+       background-color:  rgb(246, 246, 235);
+      
+     }
+     
+     .end-button{
+       width:250px;
+       margin-top: 10px;
+       padding: 10px 20px;
+     margin-left: 16px ;
+     background-color: #007bff;
+     color: white;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     }
+     .end-button:hover{
+       background-color: #0056b3; 
+     }
