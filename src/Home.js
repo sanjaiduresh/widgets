@@ -11,7 +11,7 @@ import BalanceQuickAction from './BalanceQuickAction';
 export default function Home() {
   return (
     <>
-    <TopBar></TopBar>
+    {/* <TopBar></TopBar> */}
    
     <div className='main' >
         <div>
