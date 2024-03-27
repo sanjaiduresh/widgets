@@ -50,7 +50,6 @@ export default function CurrentBalance() {
         const rate = conversionRates[currency];
         return (balance * rate).toFixed(2);
     };
-
     return (
         <div className="card">
             <div className="card-header">
