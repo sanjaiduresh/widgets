@@ -1,6 +1,6 @@
 import React from 'react'
 import "./RecentTranscation.css"
-import refresh from './Images/Refresh.jpeg'
+import refresh from './Images/loading-arrow.png'
 import threedots from './Images/Threedots.jpg'
 import blue from './Images/Blue.jpeg'
 import red from './Images/Red.jpg'

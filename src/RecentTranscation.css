@@ -19,8 +19,9 @@
 }
 
 .refresh-img{
-    width: 30px;
+    width: 25px;
     height: 25px;
+    margin-right: 5px;
     transform: translate(0, 30%);
 }
 

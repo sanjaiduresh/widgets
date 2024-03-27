@@ -3,7 +3,6 @@ import './Home.css'
 import CurrentBalance from "./CurrentBalance";
 import Exchange from "./Exchange";
 import RecentTransaction from "./RecentTransaction";
-import TopBar from './TopBar';
 import BalanceQuickAction from './BalanceQuickAction';
 
 

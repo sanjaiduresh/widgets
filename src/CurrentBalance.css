@@ -18,6 +18,7 @@
     display: flex;
     border-radius: 10px;
     justify-content: space-between;
+    position: relative;
 
 }
 
@@ -65,4 +66,12 @@
 
 .type-balance {
     color: #2F67FD;
+}
+
+.header-img{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    right: 10px;
+    top: 50px;
 }
