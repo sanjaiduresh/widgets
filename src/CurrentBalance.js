@@ -29,7 +29,7 @@ export default function CurrentBalance() {
     const conversionRates = {
         USD: 1,
         Rupees: 74.29, 
-        Euro: 0.85,    
+        Euro: 0.85,   
         SGD: 1.35      
     };
 

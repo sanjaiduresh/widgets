@@ -95,7 +95,7 @@ export default function Exchange() {
                         <img className="exchange-img" src={balance} alt="money" />
                         <select id="type-select" value={selectedFromCurrency} onChange={handleFromCurrencyChange}>
                             <option value="" disabled selected> My Balance</option>
-                            <option value="BTC">Bitcoin</option>
+                            <option value="BAL">MyBalance</option>
                             <option value="ETH">Ethereum</option>
                             <option value="CAR">Cardano</option>
                         </select>
