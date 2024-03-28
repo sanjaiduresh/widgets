@@ -3,9 +3,6 @@ import './Home.css'
 import CurrentBalance from "./CurrentBalance";
 import Exchange from "./Exchange";
 import RecentTransaction from "./RecentTransaction";
-import BalanceQuickAction from './BalanceQuickAction';
-
-
 
 export default function Home() {
   return (
@@ -16,13 +13,15 @@ export default function Home() {
         <CurrentBalance></CurrentBalance>
         </div>
         <div>
-        <RecentTransaction></RecentTransaction>
-        </div>
-        <div>
         <Exchange></Exchange>
+
         </div>
         <div>
-        <BalanceQuickAction></BalanceQuickAction>
+        <RecentTransaction></RecentTransaction>
+
+        </div>
+        <div>
+        {/* <BalanceQuickAction></BalanceQuickAction> */}
         </div>
 
     </div>
