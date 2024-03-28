@@ -14,16 +14,10 @@ export default function Home() {
         </div>
         <div>
         <Exchange></Exchange>
-
         </div>
         <div>
         <RecentTransaction></RecentTransaction>
-
         </div>
-        <div>
-        {/* <BalanceQuickAction></BalanceQuickAction> */}
-        </div>
-
     </div>
     </>
     
