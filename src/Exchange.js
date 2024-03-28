@@ -6,9 +6,9 @@ import './Exchange.css'
 
 export default function Exchange() {
     const currentDate = new Date();
-    let meridiem = "AM"; 
+    let meridiem = "AM";
     let hours = currentDate.getHours();
-    let minutes = currentDate.getMinutes(); 
+    let minutes = currentDate.getMinutes();
     if (hours > 12) {
         hours = hours - 12;
         meridiem = "PM";
@@ -23,7 +23,6 @@ export default function Exchange() {
     const [selectedFromCurrency, setSelectedFromCurrency] = useState('BTC');
     const [selectedToCurrency, setSelectedToCurrency] = useState('BTC');
     const [inputValue, setInputValue] = useState('');
-    const [storedValue, setStoredValue] = useState('');
 
     const handleFromCurrencyChange = (event) => {
         setSelectedFromCurrency(event.target.value);
@@ -35,7 +34,6 @@ export default function Exchange() {
     const handleInputChange = (event) => {
         const value = event.target.value;
         setInputValue(value);
-        setStoredValue(value);
     };
     const handleBuyExchange = () => {
         const data = {
@@ -44,7 +42,6 @@ export default function Exchange() {
             amount:"+"+ inputValue,
             status : "completed",
         };
-        console.log(data)
 
         fetch('http://localhost:8000/buy', {
             method: 'POST',
@@ -62,7 +59,7 @@ export default function Exchange() {
     };
     const handleSellExchange = () => {
         const data = {
-            type: selectedFromCurrency+selectedToCurrency,
+            type: selectedFromCurrency,
             time: timeString,
             amount: "-"+inputValue,
             status : "completed",
@@ -105,6 +102,7 @@ export default function Exchange() {
                         </div>
                         <h3 className='cost-label'></h3>
                         <div className='to-amnt'>
+                            
                             <input type="text" id="cost-input" className="cost-input" value={inputValue} onChange={handleInputChange} /><span className='to-amnt-span'>{selectedFromCurrency}</span>
                         </div>
                         <h3 className='from'>To</h3>
@@ -138,7 +136,7 @@ export default function Exchange() {
                         </div>
                         <h3 className='cost-label'></h3>
                         <div className='to-amnt'>
-                            <input type="text" id="cost-input" className="cost-input" /><span className='to-amnt-span'>{selectedFromCurrency}</span>
+                            <input type="text" id="cost-input" className="cost-input" value={inputValue} onChange={handleInputChange} /><span className='to-amnt-span'>{selectedFromCurrency}</span>
                         </div>
                         <div className='exchange-bs-btn'> 
                         <button className='end-button' onClick={handleSellExchange}>Sell</button>

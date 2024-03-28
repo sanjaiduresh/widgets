@@ -66,7 +66,7 @@ function App() {
               <td>{item.amount}</td>
               <td>{item.time}</td>
               <td>
-                <img src={getImageForStatus(item.status)} alt={item.status} className='status-img' />
+                <img src={getImageForStatus(item.status)}  className='status-img' />
                 {item.status}
               </td>
             </tr>

@@ -25,6 +25,7 @@ export default function CurrentBalance() {
                 console.error('Error fetching balance:', error);
             });
     }, []);
+    
     const conversionRates = {
         USD: 1,
         Rupees: 74.29, 
