@@ -1,38 +1,37 @@
 import React, { useState,useEffect } from 'react';
 import './CurrentBalance.css';
 import coin from "./Images/coin.png"
+import whiteCoin from "./Images/coin white.png"
 export default function CurrentBalance() {
     const [selectedCurrency, setSelectedCurrency] = useState("USD");
     const [balance, setBalance] = useState(0);
     useEffect(() => {
-        fetch(`https://65f16b99034bdbecc762724b.mockapi.io/balance`, {
+        fetch(`http://localhost:8000/balance`, {
             method: "GET"
         }).then((response) => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch balance');
+                }else{
+                    return response.json();
                 }
-                return response.json();
             })
             .then((data) => {
-                // Assuming data is an array of objects, and you want to access the balance from the first object
                 const firstDataObject = data[0];
-                const balanceValue = firstDataObject && firstDataObject.balance; // Access balance from the first object
+                const balanceValue = firstDataObject && firstDataObject.balance;
                 setBalance(balanceValue);
-                console.log(balanceValue); // Log the balance value received from the server
+                console.log(balanceValue);
             })
             .catch((error) => {
                 console.error('Error fetching balance:', error);
             });
     }, []);
-    // Conversion rates for different currencies
     const conversionRates = {
         USD: 1,
-        Rupees: 74.29, // Example conversion rate, replace with actual rate
-        Euro: 0.85,    // Example conversion rate, replace with actual rate
-        SGD: 1.35      // Example conversion rate, replace with actual rate
+        Rupees: 74.29, 
+        Euro: 0.85,    
+        SGD: 1.35      
     };
 
-    // Currency symbols for different currencies
     const currencySymbols = {
         USD: "$",
         Rupees: "₹",
@@ -40,12 +39,10 @@ export default function CurrentBalance() {
         SGD: "$"
     };
 
-    // Function to handle currency change
     const handleCurrencyChange = (event) => {
         setSelectedCurrency(event.target.value);
     };
 
-    // Function to convert balance based on selected currency
     const convertBalance = (balance, currency) => {
         const rate = conversionRates[currency];
         return (balance * rate).toFixed(2);
@@ -54,7 +51,7 @@ export default function CurrentBalance() {
         <div className="card">
             <div className="card-header">
                 <div id="cb">
-                    <img src="https://cdn-user-icons.flaticon.com/131441/131441980/1711357618900.svg?token=exp=1711358544~hmac=21912746284f3d6bfc395bba751a8767" className="img" />
+                    <img src={whiteCoin} className="img" />
                     <span>Current Balance</span>
                 </div>
                 <select id="dropdown" onChange={handleCurrencyChange} value={selectedCurrency}>
