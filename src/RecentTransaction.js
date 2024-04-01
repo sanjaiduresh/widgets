@@ -5,27 +5,32 @@ import threedots from './Images/Threedots.jpg';
 import blue from './Images/Blue.jpeg';
 import red from './Images/Red.jpg';
 import yellow from './Images/Yellow.jpg';
-import './RecentTranscation.css'
+import './RecentTranscation.css';
+
 function App() {
   const [transactionData, setTransactionData] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:8000/transaction');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-          
-        }
-        const transactionData = await response.json();
-        setTransactionData(transactionData);
-      } catch (error) {
-        console.error('Error fetching data:', error);
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:8000/transaction');
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
       }
-    };
+      const transactionData = await response.json();
+      setTransactionData(transactionData);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
+  useEffect(() => {
     fetchData();
   }, []);
+
+  const refreshData = () => {
+    setTransactionData([]);
+    fetchData();
+  };
 
   const getImageForStatus = (status) => {
     switch (status) {
@@ -44,7 +49,7 @@ function App() {
     <div className='main-grid'>
       <div className='grid'>
         <div className='title'>
-          <img src={refresh} alt="refresh" className='refresh-img' /><span>Recent Transaction</span>
+  <img src={refresh} alt="refresh" className='refresh-img' onClick={refreshData} /><span>Recent Transaction</span>
         </div>
         <div >
           <img src={threedots} alt="threedots" className='threedots' />
@@ -67,7 +72,7 @@ function App() {
               <td>{item.amount}</td>
               <td>{item.time}</td>
               <td>
-                <img src={getImageForStatus(item.status)}  className='status-img' />
+                <img src={getImageForStatus(item.status)}  className='status-img' alt={item.status} />
                 {item.status}
               </td>
             </tr>

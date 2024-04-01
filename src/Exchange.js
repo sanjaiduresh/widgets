@@ -39,8 +39,8 @@ export default function Exchange() {
         const data = {
             type: selectedFromCurrency+selectedToCurrency,
             time: timeString,
-            amount:"+"+ inputValue,
-            status : "completed",
+            amount:"+"+inputValue,
+            status : "Completed",
         };
 
         fetch('http://localhost:8000/buy', {
