@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import balance from './Images/money.png'
 import bitcoin from './Images/Bitcoin.jpeg'
 
+
 import './Exchange.css'
 
 export default function Exchange() {
@@ -15,7 +16,6 @@ export default function Exchange() {
     }
     minutes = (minutes < 10 ? "0" : "") + minutes;
 
-    // Construct the time string in 12-hour format with AM or PM
     let timeString = hours + ":" + minutes + meridiem;
 
 
@@ -43,8 +43,8 @@ export default function Exchange() {
         const data = {
             type: selectedFromCurrency+selectedToCurrency,
             time: timeString,
-            amount:"+$"+ inputValue,
-            status : "Completed",
+            amount:"+"+ inputValue,
+            status : "completed",
         };
         console.log(data)
 
@@ -66,8 +66,8 @@ export default function Exchange() {
         const data = {
             type: selectedFromCurrency+selectedToCurrency,
             time: timeString,
-            amount: "-$"+inputValue,
-            status : "Completed",
+            amount: "-"+inputValue,
+            status : "completed",
         };
         console.log(data)
 
@@ -133,7 +133,7 @@ export default function Exchange() {
                         <h3 className='from'>From</h3>
                         <img className="exchange-img" src={balance} alt="money" />
                         <select id="type-select" value={selectedFromCurrency} onChange={handleFromCurrencyChange}>
-                            <option value="BAL"  selected> My Balance</option>
+                            <option value=""  disabled selected> My Balance</option>
                             <option value="BTC">Bitcoin</option>
                             <option value="ETH">Ethereum</option>
                             <option value="CAR">Cardano</option>
@@ -147,6 +147,7 @@ export default function Exchange() {
                         <div className='exchange-select'>
                         <img className="exchange-img" src={bitcoin} alt='bitcoin' />
                         <select id="type-select" value={selectedToCurrency} onChange={handleToCurrencyChange}>
+                            <option value="" disabled selected>Bitcoin</option>
                             <option value="BTC">Bitcoin</option>
                             <option value="ETH">Ethereum</option>
                             <option value="CAR">Cardano</option>

@@ -25,6 +25,7 @@ app.post("/buy", async function (request, response) {
     const sendMethod = await client.db("Widgets").collection("recentTransaction").insertOne(getPostman);
     response.status(201).send(sendMethod);
 });
+
 app.listen(8000, () => {
     console.log("Server connected successfully..");
 })
