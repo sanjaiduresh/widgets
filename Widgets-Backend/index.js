@@ -7,6 +7,7 @@ const url = "mongodb+srv://sanjai:sanjai123@movies.vcowzfe.mongodb.net/?retryWri
 const client = new MongoClient(url);
 await client.connect();
 console.log("mongodb connected");
+
 app.use(express.json());
 app.use(cors({
     origin: "*"
